@@ -44,10 +44,23 @@ public class PlayerMovement : MonoBehaviour
             //print("right arrow key is held down");
             rb.AddForce(1 * thrust * Time.deltaTime, 0, 0);
         }
+
+        if (Input.GetKey(KeyCode.Q))
+        {
+            transform.Rotate(0, -rotationSpeed * Time.deltaTime, 0);
+        }
+
+        if (Input.GetKey(KeyCode.E))
+        {
+            transform.Rotate(0, rotationSpeed * Time.deltaTime, 0);
+        }
+
         if (Input.GetKey(KeyCode.Space))
         {
+            // Zatrzymanie gracza i anulowanie wszelkiego ruchu
             rb.velocity = Vector3.zero;
             rb.angularVelocity = Vector3.zero;
+            rb.Sleep(); // Upewnij si?, ?e Rigidbody jest zatrzymane
         }
     }
 }
