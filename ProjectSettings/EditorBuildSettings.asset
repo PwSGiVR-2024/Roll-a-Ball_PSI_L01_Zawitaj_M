@@ -4,5 +4,15 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 23d1e0fba2aef1a4a8e8a2eda6f582b0
+  - enabled: 1
+    path: Assets/Scenes/Kulka git.unity
+    guid: c4e41145d6333d14abb0c6ba9d9ab5d0
+  - enabled: 1
+    path: Assets/Scenes/PauseWindow.unity
+    guid: b5525d8c1de280c48b944de7c6f1f866
   m_configObjects: {}
+  m_UseUCBPForAssetBundles: 0

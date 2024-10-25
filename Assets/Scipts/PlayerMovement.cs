@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -8,6 +10,8 @@ public class PlayerMovement : MonoBehaviour
     public float thrust;
     public float rotationSpeed;
     public int score;
+    public Text scoreText;
+    public Text announce;
 
     // Start is called before the first frame update
     void Start()
@@ -23,31 +27,45 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
         {
-            //print("up arrow key is held down");
             rb.AddForce(0, 0, 1 * thrust * Time.deltaTime);
         }
 
         if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
         {
-            //print("down arrow key is held down");
             rb.AddForce(0, 0, -1 * thrust * Time.deltaTime);
         }
 
-        if(Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {
-            //print("left arrow key is held down");
             rb.AddForce(-1 * thrust * Time.deltaTime, 0, 0);
         }
 
-        if( Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
         {
-            //print("right arrow key is held down");
             rb.AddForce(1 * thrust * Time.deltaTime, 0, 0);
         }
+
         if (Input.GetKey(KeyCode.Space))
         {
-            rb.velocity = Vector3.zero;
+            rb.linearVelocity = Vector3.zero;
             rb.angularVelocity = Vector3.zero;
+        }
+
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("PauseWindow", LoadSceneMode.Additive);
+            Time.timeScale = 0f;
+        }
+    }
+
+    public void CollectScore()
+    {
+        score++;
+        thrust += 10;
+        scoreText.text = "Score: " + score;
+        if (score == 24)
+        {
+            announce.text = "Wygra�e�!";
         }
     }
 }
