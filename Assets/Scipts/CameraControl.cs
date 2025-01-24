@@ -6,19 +6,46 @@ public class CameraControl : MonoBehaviour
 {
     public GameObject player;
     public Vector3 offset;
+    public float rotationSpeed = 50.0f;
 
+    private float rotationInput;
 
-    // Start is called before the first frame update
     void Start()
     {
         offset = transform.position - player.transform.position;
-
+        offset.y += 4;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        transform.position = offset + player.transform.position;
-        
+        rotationInput = 0f;
+
+        if (Input.GetKey(KeyCode.Q))
+        {
+            rotationInput = -1f;
+        }
+        if (Input.GetKey(KeyCode.E))
+        {
+            rotationInput = 1f;
+        }
+
+        if (rotationInput != 0f)
+        {
+            RotateAroundPlayer(rotationInput * rotationSpeed);
+        }
+
+        transform.position = player.transform.position + offset;
+        transform.LookAt(player.transform);
+    }
+
+    void RotateAroundPlayer(float speed)
+    {
+        Quaternion camTurnAngle = Quaternion.AngleAxis(speed * Time.deltaTime, Vector3.up);
+        offset = camTurnAngle * offset;
     }
 }
+
+
+
+
+

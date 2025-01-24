@@ -5,12 +5,14 @@ public class Menu : MonoBehaviour
 {
     public void startGame()
     {
-        SceneManager.LoadScene("Kulka git", LoadSceneMode.Single);
+        SceneManager.LoadScene(3, LoadSceneMode.Single);
     }
+
     public void settings()
     {
-
+        SceneManager.LoadScene(2, LoadSceneMode.Single);
     }
+
     public void exitGame()
     {
         Application.Quit();
