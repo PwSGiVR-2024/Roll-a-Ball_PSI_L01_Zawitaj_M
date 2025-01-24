@@ -9,10 +9,28 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 23d1e0fba2aef1a4a8e8a2eda6f582b0
   - enabled: 1
-    path: Assets/Scenes/Kulka git.unity
-    guid: c4e41145d6333d14abb0c6ba9d9ab5d0
-  - enabled: 1
     path: Assets/Scenes/PauseWindow.unity
     guid: b5525d8c1de280c48b944de7c6f1f866
+  - enabled: 1
+    path: Assets/Scenes/Settings.unity
+    guid: 04e52f7bef4765648a56c09ac3f9b53c
+  - enabled: 1
+    path: Assets/Scenes/Poziom 1.unity
+    guid: c4e41145d6333d14abb0c6ba9d9ab5d0
+  - enabled: 1
+    path: Assets/Scenes/Poziom 2.unity
+    guid: b18183baf7993e54d97fa2d0d0aac3c5
+  - enabled: 1
+    path: Assets/Scenes/Poziom 3.unity
+    guid: 1e46648f19033cd46be5f7b9ca6decd5
+  - enabled: 1
+    path: Assets/Scenes/Congrats Scene.unity
+    guid: 7ed6b9eb7fe9b754dafa35ae46bc6076
+  - enabled: 1
+    path: Assets/Scenes/Score Screen.unity
+    guid: ecbb8669cd18b90498af3dbb2406abd8
+  - enabled: 1
+    path: Assets/Scenes/DevConsole.unity
+    guid: 3ee7507a7471bd649bdd91ae1c304e8b
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
